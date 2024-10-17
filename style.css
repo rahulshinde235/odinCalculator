@@ -70,8 +70,13 @@ body {
   height: 100vh;
   width: 100vw;
 }
+.title {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  font-size: 4rem;
+}
 .main {
-  height: inherit;
+  height: 70vh;
   width: inherit;
   display: flex;
   justify-content: center;
@@ -79,19 +84,44 @@ body {
 }
 
 .container {
+  width: 30%;
+  height: 70%;
+  border: 10px solid rgba(47, 47, 47, 1);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);
   gap: 0.2rem;
+  padding: 0.2rem;
+  background-color: black;
+  border-radius: 10px;
 }
 .display {
   grid-column: 1/-1;
   border: 2px solid black;
   border-radius: 5px;
+  background-color: #b2b9b7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 2rem;
+  height: 4rem;
+  padding: 1rem;
 }
 button {
   border-radius: 5px;
 }
 .zero {
   grid-column: 1/3;
+}
+.reset {
+  grid-column: 1/3;
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 3rem;
+  }
+  .container {
+    width: 80%;
+  }
 }

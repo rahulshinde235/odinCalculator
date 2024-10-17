@@ -4,32 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
     <title>Calculator</title>
   </head>
   <body>
+    <h1 class="title">Calculator</h1>
     <div class="main">
       <div class="container">
         <div class="display"></div>
-        <button type="button">AC</button>
-        <button type="button">+/-</button>
-        <button type="button">%</button>
-        <button type="button">/</button>
-        <button type="button" value="7">7</button>
-        <button type="button" value="8">8</button>
-        <button type="button" value="9">9</button>
-        <button type="button">*</button>
-        <button type="button" value="4">4</button>
-        <button type="button" value="5">5</button>
-        <button type="button" value="6">6</button>
-        <button type="button">-</button>
-        <button type="button" value="1">1</button>
-        <button type="button" value="2">2</button>
-        <button type="button" value="3">3</button>
-        <button type="button">+</button>
-        <button class="zero" type="button" value="0">0</button>
-        <button type="button">.</button>
-        <button type="button">=</button>
+        <button type="button" data-reset class="reset">AC</button>
+        <button type="button" data-operator value="%">%</button>
+        <button type="button" data-operator value="/">/</button>
+        <button type="button" value="7" data-number>7</button>
+        <button type="button" value="8" data-number>8</button>
+        <button type="button" value="9" data-number>9</button>
+        <button type="button" value="*" data-operator>*</button>
+        <button type="button" value="4" data-number>4</button>
+        <button type="button" value="5" data-number>5</button>
+        <button type="button" value="6" data-number>6</button>
+        <button type="button" value="-" data-operator>-</button>
+        <button type="button" value="1" data-number>1</button>
+        <button type="button" value="2" data-number>2</button>
+        <button type="button" value="3" data-number>3</button>
+        <button type="button" value="+" data-operator>+</button>
+        <button class="zero" type="button" value="0" data-number>0</button>
+        <button type="button" value="." data-number>.</button>
+        <button type="button" value="=" class="calculate">=</button>
       </div>
     </div>
   </body>
