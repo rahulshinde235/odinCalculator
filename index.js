@@ -5,6 +5,7 @@ let operand2 = null;
 let operator = null;
 let isFirstNumber = true;
 let isCalculate = false;
+let carryForwardOperator = null;
 const sumElem = document.querySelector(".calculate");
 const container = document.querySelector(".container");
 const display = document.querySelector(".display");
@@ -44,8 +45,9 @@ sumElem.addEventListener("click", (e) => {
     } else {
       operand1 = Number.isInteger(sum) ? sum : sum.toFixed(1);
       operand2 = null;
-      operator = null;
-      updateDisplay(`${operand1} `);
+      operator = carryForwardOperator === null ? operator : carryForwardOperator;
+      carryForwardOperator = null;
+      updateDisplay(`${operand1}${operator ? ` ${operator} ` : ""}`);
     }
   }
 });
@@ -76,13 +78,15 @@ container.addEventListener("click", function (e) {
     }
   } else if (isOperatorElement) {
     if (operator !== null && operand2 !== null) {
+      carryForwardOperator = value;
       sumElem.click();
       return;
+    } else {
+      carryForwardOperator = null;
+      operator = value;
+      isFirstNumber = false;
+      updateDisplay(`${operand1}${operator ? ` ${operator} ` : ""}`);
     }
-
-    operator = value;
-    isFirstNumber = false;
-    updateDisplay(`${operand1}${operator ? ` ${operator} ` : ""}`);
   }
 });
 

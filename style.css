@@ -116,7 +116,9 @@ button {
 .reset {
   grid-column: 1/3;
 }
-
+.color-btn {
+  background-color: #f28500;
+}
 @media screen and (max-width: 600px) {
   .title {
     font-size: 3rem;
